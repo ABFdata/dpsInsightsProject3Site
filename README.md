@@ -9,7 +9,7 @@
 
 <hr>
 
-![title](images/barbershop.jpg)
+![title](img/barbershop.jpg)
 <hr>
 
 ### Objective
@@ -50,7 +50,7 @@ We'll display our predictions through a dynamic, interactive Shiny Dashboard and
 
 <hr>
 
-![title](images/barbershop2.jpg)
+![title](img/barbershop2.jpg)
 <br>
 
 ## Copyright
