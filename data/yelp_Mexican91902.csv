@@ -1,0 +1,16 @@
+,BusinessName,BusinessCategory,YelpRating,ReviewCount,PriceRange($),PriceCategory,Address,Phone,Website
+0,TJ Oyster Bar,"Seafood,
+                    Mexican",4.5 star rating,1348 reviews,$,Under $10,"4246 Bonita RdBonita, CA 91902",(619) 267-4577,tjoysterbar.com
+1,Graciela’s Taco Shop,Mexican,4.0 star rating,79 reviews,$,Under $10,"5047-A Central AveBonita, CA 91902",(619) 267-8144,no website
+2,Romesco,"Mexican,
+                    Mediterranean,
+                    Tapas Bars",4.0 star rating,601 reviews,$$,$11-30,"4346 Bonita RdBonita, CA 91902",(619) 475-8627,romescomexmed.com
+3,Cotijas Taco Shop,Mexican,3.5 star rating,161 reviews,$,Under $10,"4444 Bonita RdBonita, CA 91902",(619) 267-2990,no website
+4,Lolita’s Mexican Food,Mexican,3.5 star rating,658 reviews,$,Under $10,"4516 Bonita RdBonita, CA 91902",(619) 479-8636,lolitasmexicanfood.com
+5,Murrieta’s Mexican Restaurant,Mexican,3.5 star rating,290 reviews,$$,$11-30,"5170 Bonita RdBonita, CA 91902",(619) 479-8024,murrietasbonita.com
+6,Taqueria Revolucion,Tacos,4.0 star rating,447 reviews,$,Under $10,"3001 Bonita RdChula Vista, CA 91910",(619) 934-9191,eatsdtacos.com
+7,La Lomita Mexican Grill,"Mexican,
+                    Seafood,
+                    Breakfast & Brunch",4.0 star rating,171 reviews,$,Under $10,"3100 E 8th StSte ANational City, CA 91950",(619) 470-4564,lalomitamexicangrill.com
+8,Graciela’s Taco Shop,Mexican,4.0 star rating,131 reviews,$,Under $10,"8300 Paradise Valley RdSte 105Spring Valley, CA 91977",(619) 267-8143,no website
+9,Tacos El Gordo,Tacos,4.5 star rating,3583 reviews,$,Under $10,"556 BroadwayChula Vista, CA 91910",(619) 691-8848,tacoselgordobc.com
