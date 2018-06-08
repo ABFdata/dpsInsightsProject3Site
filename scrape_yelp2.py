@@ -44,7 +44,6 @@ def scrape_yelp(url, search, zipcode):
     zipcode = zipcode
     business_name = []
     business_category = []
-    yelp_rating = []
     review_count = []
     price_range = []
     price_category = []
@@ -55,9 +54,19 @@ def scrape_yelp(url, search, zipcode):
     for i in url:
         response = requests.get(i)
         soup = BeautifulSoup(response.text, 'html.parser')
-        business_name.append(soup.find('h1', attrs={'class':'biz-page-title embossed-text-white shortenough'}).text.strip())
+        
+        if soup.find(attrs={'class': 'biz-page-title embossed-text-white shortenough'}) is not None:
+            business_name.append(soup.find('h1', attrs={'class':'biz-page-title embossed-text-white shortenough'}).text.strip())
+        else:
+            business_name.append('unknown')
+        
         business_category.append(soup.find(attrs={'class': 'category-str-list'}).text.strip())
-        yelp_rating.append(soup.find(attrs={"class":"i-stars"})["title"])
+        
+#         if soup.find(attrs={"class":"i-stars"})["title"] is not None:
+#             yelp_rating.append(soup.find(attrs={"class":"i-stars"})["title"])
+#         else:
+#             yelp_rating.append('unknown')
+        
         review_count.append(soup.find(attrs={'class': 'review-count rating-qualifier'}).text.strip())
         
         if soup.find(attrs={'class': 'business-attribute price-range'}) is not None:
@@ -68,26 +77,32 @@ def scrape_yelp(url, search, zipcode):
         if soup.find(attrs={'class': 'nowrap price-description'}) is not None:
             price_category.append(soup.find(attrs={'class': 'nowrap price-description'}).text.strip())
         else:
-            price_category.append('unkown')
+            price_category.append('unknown')
         
         address.append(soup.find(attrs={'class': 'street-address'}).text.strip())
-        phone.append(soup.find(attrs={'class': 'biz-phone'}).text.strip())
+        
+        if soup.find(attrs={'class': 'biz-phone'}) is not None:
+            phone.append(soup.find(attrs={'class': 'biz-phone'}).text.strip())    
+        else:
+            phone.append('unknown')
+            
         
         if soup.find("a", href=lambda href: href and "biz_redir?" in href) is not None:
             website.append(soup.find("a", href=lambda href: href and "biz_redir?" in href).text.strip())
         else:
-            website.append('no website')     
+            website.append('no website')       
     print (business_name)
-    create_table(business_name, business_category, yelp_rating,review_count, price_range, price_category, address, phone, website, search, zipcode)
+    create_table(business_name, business_category, review_count, price_range, price_category, address, phone, website, search, zipcode)
+
+        
 
 # create a dataframe with yelp data from yelp scrape
-def create_table(business_name, business_category, yelp_rating,review_count, price_range, price_category, address, phone, website, search, zipcode):
+def create_table(business_name, business_category, review_count, price_range, price_category, address, phone, website, search, zipcode):
     search = search
     zipcode = zipcode
     data = {
     'BusinessName' : business_name,
     'BusinessCategory' : business_category,
-    'YelpRating' : yelp_rating,
     'ReviewCount' : review_count,
     'PriceRange($)' : price_range,
     'PriceCategory': price_category,

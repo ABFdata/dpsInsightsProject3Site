@@ -1,6 +1,9 @@
 # Dependencies
 from flask import Flask, render_template, jsonify, redirect, request
-from scrape_yelp import search_yelp
+# from scrape_yelp import search_yelp
+# ^^^ og scrape yelp
+
+from scrape_yelp2 import search_yelp
 
 app = Flask(__name__)
 
